@@ -35,7 +35,34 @@ Using open-source datasets from **Kaggle**, this project investigates:
 ├─ presentation-video.md    # script for presentation
 ├─ slides.pdf               # project presentation
 ```
----
+---   
+## Key Metrics and Formulas
+
+### Essential Cost of Living to Income Ratio (ECLIR)
+
+$$
+\mathrm{ECLIR}(s) = \frac{\text{Essential Living Expenses}_s}{\text{Median Household Income}_s} \times 100
+$$
+
+This ratio measures the percentage of a household's income spent on essential living costs in state/county \(s\).
+
+### Housing Cost Burden (HCB)
+
+$$
+\mathrm{HCB}(s) = \frac{\text{Median Housing Expenses}_s}{\text{Median Household Income}_s} \times 100
+$$
+
+Housing is considered affordable if HCB ≤ 30%. Higher values indicate households are housing-burdened.
+
+### Price-to-Income Ratio (PIR)
+
+$$
+\mathrm{PIR}(s) = \frac{\text{Median House Price}_s}{\text{Median Annual Household Income}_s}
+$$
+
+The PIR indicates how many years of income are needed to purchase a median-priced home in state/county \(s\).  
+
+---  
 
 ## Methods
 - **Data Cleaning & Preprocessing** of Kaggle datasets  
