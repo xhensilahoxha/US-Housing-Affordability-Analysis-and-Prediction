@@ -76,7 +76,7 @@ The PIR measures the housing affordability by comparing the house market prices 
 
 ## Key Results   
 
-![Essential Cost of Living-to-Income Ratio](images/eclir.JPG)   
+![Essential Cost of Living-to-Income Ratio](images/eclir.png)   
 *Essential cost of living ratio across U.S. states.*  
 
 ![Price-to-Income Ratio](images/p1r.png)   
