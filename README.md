@@ -153,4 +153,4 @@ This project is released under the [MIT License](LICENSE).
 ---
 
 ## Acknowledgements
-This work was carried out as part of the **Methods of Advanced Data Engineering (MADE)** module at **FAU Erlangen-Nürnberg**.
+This individual work was carried out as part of the Methods of Advanced Data Engineering (MADE) module at FAU Erlangen-Nürnberg.
