@@ -76,8 +76,8 @@ The PIR measures the housing affordability by comparing the house market prices 
 
 ## Key Results   
 
-![Housing Cost Burden](images/hcb.png)   
-*Housing cost burden compared with the 30% affordability threshold.*   
+![Essential Cost of Living-to-Income Ratio](images/eclir.JPG)   
+*Essential cost of living ratio across U.S. states.*  
 
 ![Price-to-Income Ratio](images/p1r.png)   
 *Distribution of PIR across U.S. states.*
