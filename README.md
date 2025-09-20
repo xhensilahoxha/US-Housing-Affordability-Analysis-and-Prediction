@@ -31,6 +31,10 @@ Using open-source datasets the project investigates:
 ├─ scripts/                 # shell scripts
 │   ├─ pipeline.sh          # wrapper to run pipeline
 │   └─ tests.sh             # test runner
+│     
+├─ images/                 # visual results
+│   ├─ eclir.png           # visual for living costs
+│   └─ p1r.png             # visual for affordability
 │
 ├─ tests/                   # testing
 │   └─ test_pipeline.py     # basic checks for pipeline
