@@ -4,10 +4,6 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 
-# Data (add/remove as you like)
-data/
-*.sqlite
-
 # OS / editor
 .DS_Store
 Thumbs.db

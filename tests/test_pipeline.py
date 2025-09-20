@@ -176,7 +176,7 @@ def test_table_and_column_format(database_full_path):
                 ('household_id', 'BIGINT'), ('housing_expenses', 'FLOAT'), ('food_expenses', 'FLOAT'),
                 ('transport_expenses', 'FLOAT'), ('healthcare_expenses', 'FLOAT'), ('other_necessities_expenses', 'FLOAT'),
                 ('childcare_expenses', 'FLOAT'), ('household_taxes', 'FLOAT'), ('total_household_expenses', 'FLOAT'),
-                ('parents_per_household', 'INTEGER'), ('children_per_household', 'INTEGER'), ('state', 'TEXT')
+                ('parents_per_household', 'BIGINT'), ('children_per_household', 'BIGINT'), ('state', 'TEXT')
             ]
             pragma_query_format = "PRAGMA table_info(cost_of_living);"
             name_type_cost_of_living = [(row[1], row[2]) for row in database_connection.execute(pragma_query_format).fetchall()]
@@ -208,7 +208,7 @@ def test_table_and_column_format(database_full_path):
 def test_end_to_end(database_full_path):
     # Pipeline Execution
     # result = subprocess.run(["bash", "pipeline.sh"], capture_output=True, text=True)
-    result = subprocess.run(["python", "./project/pipeline.py"], capture_output=True, text=True)
+    result = subprocess.run(["python", "./src/pipeline.py"], capture_output=True, text=True)
     assert result.returncode == 0, f"{result.stderr}: Pipeline execution failed!"
 
     # Output Files validation

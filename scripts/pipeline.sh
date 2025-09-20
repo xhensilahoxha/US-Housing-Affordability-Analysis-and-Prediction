@@ -20,7 +20,7 @@ fi
 echo "Your Kaggle API credentials are set up"
 
 echo "Running the automated ETL pipeline..."
-python ./project/pipeline.py
+python ./project/src/pipeline.py
 echo "Pipeline executed successfully. SQLite database is now available"
 
 echo "Success!"

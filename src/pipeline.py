@@ -38,7 +38,7 @@ def download_kaggle_datasets(url, _path=''):
 
 def initialize_sqlite_db(db_name):
     """ SQLITE Initialization """
-    files_dir = './data'
+    files_dir = './project/data'
     if not os.path.exists(files_dir):
         os.makedirs(files_dir)
         print(f"Created directory: {files_dir}")
