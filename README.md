@@ -4,14 +4,14 @@
 This project analyzes the relationship between **essential living costs** and **housing affordability** in the United States.  
 Households are increasingly challenged by rising expenses, making affordability a sensitive issue to address.  
 
-Using open-source datasets from **Kaggle**, this project investigates:
+Using open-source datasets the project investigates:
 
 **How do essential living expenses impact the ability of U.S. households to afford housing?**
 
 ---
 
 ## Objectives
-1. Explore cost-of-living data and correlate it with household incomes across U.S. counties.  
+1. Explore cost-of-living data and correlate it with household incomes across U.S. states.  
 2. Analyze housing costs and measure the affordability burden for households.  
 3. Apply predictive modeling to forecast affordability trends and housing-related stress.  
 
@@ -22,34 +22,44 @@ Using open-source datasets from **Kaggle**, this project investigates:
 .
 ├─ README.md                # project documentation
 ├─ requirements.txt         # dependencies
-├─ data-analysis.py         # main exploratory data analysis
-├─ extra-analysis.py        # prediction analysis based on data
-├─ pipeline.py              # end-to-end workflow (analysis + prediction)
-├─ pipeline.sh              # shell wrapper for pipeline
-├─ test.py                  # basic checks
-├─ tests.sh                 # additional shell-based checks
+├─ LICENSE                  # license
 │
-├─ analysis-report.pdf      # main technical report
-├─ data-report.pdf          # dataset documentation
-├─ project-plan.md          # planning document
-├─ presentation-video.md    # script for presentation
-├─ slides.pdf               # project presentation
+├─ src/                     # Python source code
+│   ├─ data_analysis.py     # main exploratory analysis
+│   └─ pipeline.py          # end-to-end workflow
+│
+├─ scripts/                 # shell scripts
+│   ├─ pipeline.sh          # wrapper to run pipeline
+│   └─ tests.sh             # test runner
+│
+├─ tests/                   # testing
+│   └─ test_pipeline.py     # basic checks for pipeline
+│
+├─ reports/                 # outputs and deliverables
+│   ├─ analysis-report.pdf  # technical analysis
+│   ├─ data-report.pdf      # dataset documentation
+│   └─ slides.pdf           # project presentation
+│
+└─ docs/                    # supporting documents
+    ├─ project-plan.md      # planning document
+    └─ presentation-video.md# notes / script
 ```
----   
-## Key Metrics and Formulas
+
+---
+## Key Formulas
 
 ### Essential Cost of Living to Income Ratio (ECLIR)
 
 $$
-\mathrm{ECLIR}(s) = \frac{\text{Essential Living Expenses}_s}{\text{Median Household Income}_s} \times 100
+\mathrm{ECLIR}(area) = \frac{\text{Median Essential Living Expenses}}{\text{Median Household Income}} \times 100
 $$
 
-This ratio measures the percentage of a household's income spent on essential living costs in state/county \(s\).
+This ratio measures the percentage of a **typical** household's income spent on essential living costs.
 
 ### Housing Cost Burden (HCB)
 
 $$
-\mathrm{HCB}(s) = \frac{\text{Median Housing Expenses}_s}{\text{Median Household Income}_s} \times 100
+\mathrm{HCB}(area) = \frac{\text{Median Housing Expenses}}{\text{Median Household Income}} \times 100
 $$
 
 Housing is considered affordable if HCB ≤ 30%. Higher values indicate households are housing-burdened.
@@ -57,15 +67,24 @@ Housing is considered affordable if HCB ≤ 30%. Higher values indicate househol
 ### Price-to-Income Ratio (PIR)
 
 $$
-\mathrm{PIR}(s) = \frac{\text{Median House Price}_s}{\text{Median Annual Household Income}_s}
+\mathrm{PIR}(state) = \frac{\text{Median House Price}}{\text{Median Annual Household Income}}
 $$
 
-The PIR indicates how many years of income are needed to purchase a median-priced home in state/county \(s\).  
+The PIR measures the housing affordability by comparing the house market prices with household incomes.
 
 ---  
 
+## Key Results   
+
+![Housing Cost Burden](images/hcb.png)   
+*Housing cost burden compared with the 30% affordability threshold.*   
+
+![Price-to-Income Ratio](images/p1r.png)   
+*Distribution of PIR across U.S. states.*
+
+---  
 ## Methods
-- **Data Cleaning & Preprocessing** of Kaggle datasets  
+- **Data Cleaning & Preprocessing** of datasets  
 - **Exploratory Data Analysis (EDA)** with visualization  
 - **Predictive Modeling** of affordability metrics  
 - **Correlation Analysis** between living expenses and household income  
@@ -73,7 +92,7 @@ The PIR indicates how many years of income are needed to purchase a median-price
 ---
 
 ## Tools & Technologies
-- Python (pandas, scikit-learn, matplotlib, seaborn)  
+- Python (pandas, sqlalchemy, sqlite3, json, scikit-learn, matplotlib, seaborn)  
 - Jupyter Notebook / VS Code  
 - Shell scripting (pipeline automation)  
 
@@ -112,13 +131,6 @@ bash pipeline.sh
 The datasets used in this project were retrieved from **Kaggle** and adapted for analysis:
 - [US Cost of Living Dataset](https://www.kaggle.com/datasets/asaniczka/us-cost-of-living-dataset-3171-counties)  
 - [US House Listings Dataset](https://www.kaggle.com/datasets/febinphilips/us-house-listings-2023)  
-
----
-
-## Outputs
-- `analysis-report.pdf` — technical analysis and results  
-- `data-report.pdf` — dataset documentation  
-- `slides.pdf` — project presentation  
 
 ---
 
